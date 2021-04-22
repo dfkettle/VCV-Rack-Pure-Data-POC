@@ -1,0 +1,751 @@
+{
+  "version": "1.1.6",
+  "modules": [
+    {
+      "id": 3452,
+      "plugin": "VCV-Prototype",
+      "version": "1.3.0",
+      "model": "Prototype",
+      "params": [
+        {
+          "id": 0,
+          "value": 0.238999993
+        },
+        {
+          "id": 1,
+          "value": 0.423500001
+        },
+        {
+          "id": 2,
+          "value": 0.16700004
+        },
+        {
+          "id": 3,
+          "value": 0.196999982
+        },
+        {
+          "id": 4,
+          "value": 0.140000015
+        },
+        {
+          "id": 5,
+          "value": 0.147500008
+        },
+        {
+          "id": 6,
+          "value": 0.0
+        },
+        {
+          "id": 7,
+          "value": 0.0
+        },
+        {
+          "id": 8,
+          "value": 0.0
+        },
+        {
+          "id": 9,
+          "value": 0.0
+        },
+        {
+          "id": 10,
+          "value": 0.0
+        },
+        {
+          "id": 11,
+          "value": 0.0
+        }
+      ],
+      "leftModuleId": 3460,
+      "rightModuleId": 3471,
+      "data": {
+        "path": "C:\\Data\\PureData\\VCV Rack\\vcv-random-gates.pd",
+        "script": "#N canvas 286 9 1014 761 12;\n#X obj 47 695 dac~ 1 2 3 4 5 6;\n#X obj 36 62 route K1 K2 K3 K4 K5 K6;\n#X obj 379 60 route S1 S2 S3 S4 S5 S6;\n#X obj 36 25 r fromRack;\n#X obj 267 296 random-gates 1;\n#X obj 484 296 random-gates 2;\n#X obj 706 296 random-gates 3;\n#X obj 267 542 random-gates 4;\n#X obj 484 542 random-gates 5;\n#X obj 706 542 random-gates 6;\n#X obj 706 64 adc~ 1 2 3 4 5 6;\n#X text 708 37 Intensity:;\n#X obj 815 89 send~ RG-6-IN;\n#X obj 793 111 send~ RG-5-IN;\n#X obj 772 133 send~ RG-4-IN;\n#X obj 749 155 send~ RG-3-IN;\n#X obj 728 177 send~ RG-2-IN;\n#X obj 705 200 send~ RG-1-IN;\n#X obj 267 245 r~ RG-1-IN;\n#X obj 484 245 r~ RG-2-IN;\n#X obj 707 244 r~ RG-3-IN;\n#X obj 36 206 send RG-1-PR;\n#X obj 62 184 send RG-2-PR;\n#X obj 88 162 send RG-3-PR;\n#X obj 115 140 send RG-4-PR;\n#X obj 141 118 send RG-5-PR;\n#X obj 167 96 send RG-6-PR;\n#X obj 155 672 r~ VCV-6;\n#X obj 46 560 r~ VCV-1;\n#X obj 67 582 r~ VCV-2;\n#X obj 89 605 r~ VCV-3;\n#X obj 111 627 r~ VCV-4;\n#X obj 134 650 r~ VCV-5;\n#X obj 363 271 r RG-1-PR;\n#X obj 580 272 r RG-2-PR;\n#X obj 802 272 r RG-3-PR;\n#X obj 267 387 send~ VCV-1;\n#X obj 484 387 send~ VCV-2;\n#X obj 707 386 send~ VCV-3;\n#X obj 267 650 send~ VCV-4;\n#X obj 484 650 send~ VCV-5;\n#X obj 707 649 send~ VCV-6;\n#X obj 379 206 send RG-1-MB;\n#X obj 405 184 send RG-2-MB;\n#X obj 431 162 send RG-3-MB;\n#X obj 458 140 send RG-4-MB;\n#X obj 484 118 send RG-5-MB;\n#X obj 510 96 send RG-6-MB;\n#X obj 460 272 r RG-1-MB;\n#X obj 677 272 r RG-2-MB;\n#X obj 267 492 r~ RG-4-IN;\n#X obj 363 518 r RG-4-PR;\n#X obj 460 519 r RG-4-MB;\n#X obj 484 492 r~ RG-5-IN;\n#X obj 580 519 r RG-5-PR;\n#X obj 677 519 r RG-5-MB;\n#X obj 706 492 r~ RG-6-IN;\n#X obj 802 519 r RG-6-PR;\n#X obj 899 519 r RG-6-MB;\n#X obj 899 272 r RG-3-MB;\n#X msg 460 418 L1 \\$1 \\$2 \\$3;\n#X msg 677 418 L2 \\$1 \\$2 \\$3;\n#X msg 899 418 L3 \\$1 \\$2 \\$3;\n#X msg 677 683 L5 \\$1 \\$2 \\$3;\n#X msg 899 683 L6 \\$1 \\$2 \\$3;\n#X obj 460 446 print toRack;\n#X obj 677 446 print toRack;\n#X obj 899 446 print toRack;\n#X obj 460 711 print toRack;\n#X obj 677 711 print toRack;\n#X obj 899 711 print toRack;\n#X obj 352 446 print toRack;\n#X obj 569 446 print toRack;\n#X obj 791 446 print toRack;\n#X msg 352 418 S1 \\$1 \\$2 \\$3;\n#X msg 569 418 S2 \\$1 \\$2 \\$3;\n#X msg 791 418 S3 \\$1 \\$2 \\$3;\n#X obj 351 711 print toRack;\n#X obj 568 711 print toRack;\n#X obj 790 711 print toRack;\n#X msg 351 683 S4 \\$1 \\$2 \\$3;\n#X msg 460 683 L4 \\$1 \\$2 \\$3;\n#X msg 568 684 S5 \\$1 \\$2 \\$3;\n#X msg 790 683 S6 \\$1 \\$2 \\$3;\n#X obj 379 25 r fromRack;\n#X obj 27 473 print toRack;\n#X obj 27 403 loadbang;\n#X msg 27 438 display Greetings from Pure Data!;\n#X connect 1 0 21 0;\n#X connect 1 1 22 0;\n#X connect 1 2 23 0;\n#X connect 1 3 24 0;\n#X connect 1 4 25 0;\n#X connect 1 5 26 0;\n#X connect 2 0 42 0;\n#X connect 2 1 43 0;\n#X connect 2 2 44 0;\n#X connect 2 3 45 0;\n#X connect 2 4 46 0;\n#X connect 2 5 47 0;\n#X connect 3 0 1 0;\n#X connect 4 0 36 0;\n#X connect 4 1 60 0;\n#X connect 4 1 74 0;\n#X connect 5 0 37 0;\n#X connect 5 1 61 0;\n#X connect 5 1 75 0;\n#X connect 6 0 38 0;\n#X connect 6 1 62 0;\n#X connect 6 1 76 0;\n#X connect 7 0 39 0;\n#X connect 7 1 81 0;\n#X connect 7 1 80 0;\n#X connect 8 0 40 0;\n#X connect 8 1 63 0;\n#X connect 8 1 82 0;\n#X connect 9 0 41 0;\n#X connect 9 1 64 0;\n#X connect 9 1 83 0;\n#X connect 10 0 17 0;\n#X connect 10 1 16 0;\n#X connect 10 2 15 0;\n#X connect 10 3 14 0;\n#X connect 10 4 13 0;\n#X connect 10 5 12 0;\n#X connect 18 0 4 0;\n#X connect 19 0 5 0;\n#X connect 20 0 6 0;\n#X connect 27 0 0 5;\n#X connect 28 0 0 0;\n#X connect 29 0 0 1;\n#X connect 30 0 0 2;\n#X connect 31 0 0 3;\n#X connect 32 0 0 4;\n#X connect 33 0 4 1;\n#X connect 34 0 5 1;\n#X connect 35 0 6 1;\n#X connect 48 0 4 2;\n#X connect 49 0 5 2;\n#X connect 50 0 7 0;\n#X connect 51 0 7 1;\n#X connect 52 0 7 2;\n#X connect 53 0 8 0;\n#X connect 54 0 8 1;\n#X connect 55 0 8 2;\n#X connect 56 0 9 0;\n#X connect 57 0 9 1;\n#X connect 58 0 9 2;\n#X connect 59 0 6 2;\n#X connect 60 0 65 0;\n#X connect 61 0 66 0;\n#X connect 62 0 67 0;\n#X connect 63 0 69 0;\n#X connect 64 0 70 0;\n#X connect 74 0 71 0;\n#X connect 75 0 72 0;\n#X connect 76 0 73 0;\n#X connect 80 0 77 0;\n#X connect 81 0 68 0;\n#X connect 82 0 78 0;\n#X connect 83 0 79 0;\n#X connect 84 0 2 0;\n#X connect 87 0 85 0;\n"
+      },
+      "pos": [
+        36,
+        0
+      ]
+    },
+    {
+      "id": 3454,
+      "plugin": "Fundamental",
+      "version": "1.4.0",
+      "model": "LFO2",
+      "params": [
+        {
+          "id": 0,
+          "value": 0.0
+        },
+        {
+          "id": 1,
+          "value": 1.0
+        },
+        {
+          "id": 2,
+          "value": -0.96200031
+        },
+        {
+          "id": 3,
+          "value": 0.0
+        },
+        {
+          "id": 4,
+          "value": 0.5
+        }
+      ],
+      "rightModuleId": 3456,
+      "pos": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": 3456,
+      "plugin": "Fundamental",
+      "version": "1.4.0",
+      "model": "LFO2",
+      "params": [
+        {
+          "id": 0,
+          "value": 0.0
+        },
+        {
+          "id": 1,
+          "value": 1.0
+        },
+        {
+          "id": 2,
+          "value": 3.79900169
+        },
+        {
+          "id": 3,
+          "value": 0.0
+        },
+        {
+          "id": 4,
+          "value": 0.5
+        }
+      ],
+      "leftModuleId": 3454,
+      "rightModuleId": 3457,
+      "pos": [
+        6,
+        0
+      ]
+    },
+    {
+      "id": 3457,
+      "plugin": "Fundamental",
+      "version": "1.4.0",
+      "model": "LFO2",
+      "params": [
+        {
+          "id": 0,
+          "value": 0.0
+        },
+        {
+          "id": 1,
+          "value": 1.0
+        },
+        {
+          "id": 2,
+          "value": -5.27300072
+        },
+        {
+          "id": 3,
+          "value": 0.0
+        },
+        {
+          "id": 4,
+          "value": 0.5
+        }
+      ],
+      "leftModuleId": 3456,
+      "rightModuleId": 3458,
+      "pos": [
+        12,
+        0
+      ]
+    },
+    {
+      "id": 3458,
+      "plugin": "Fundamental",
+      "version": "1.4.0",
+      "model": "LFO2",
+      "params": [
+        {
+          "id": 0,
+          "value": 0.0
+        },
+        {
+          "id": 1,
+          "value": 1.0
+        },
+        {
+          "id": 2,
+          "value": -0.980000019
+        },
+        {
+          "id": 3,
+          "value": 0.0
+        },
+        {
+          "id": 4,
+          "value": 0.5
+        }
+      ],
+      "leftModuleId": 3457,
+      "rightModuleId": 3459,
+      "pos": [
+        18,
+        0
+      ]
+    },
+    {
+      "id": 3459,
+      "plugin": "Fundamental",
+      "version": "1.4.0",
+      "model": "LFO2",
+      "params": [
+        {
+          "id": 0,
+          "value": 0.0
+        },
+        {
+          "id": 1,
+          "value": 1.0
+        },
+        {
+          "id": 2,
+          "value": -4.46300125
+        },
+        {
+          "id": 3,
+          "value": 0.0
+        },
+        {
+          "id": 4,
+          "value": 0.5
+        }
+      ],
+      "leftModuleId": 3458,
+      "rightModuleId": 3460,
+      "pos": [
+        24,
+        0
+      ]
+    },
+    {
+      "id": 3460,
+      "plugin": "Fundamental",
+      "version": "1.4.0",
+      "model": "LFO2",
+      "params": [
+        {
+          "id": 0,
+          "value": 0.0
+        },
+        {
+          "id": 1,
+          "value": 1.0
+        },
+        {
+          "id": 2,
+          "value": -2.76199961
+        },
+        {
+          "id": 3,
+          "value": 0.0
+        },
+        {
+          "id": 4,
+          "value": 0.5
+        }
+      ],
+      "leftModuleId": 3459,
+      "rightModuleId": 3452,
+      "pos": [
+        30,
+        0
+      ]
+    },
+    {
+      "id": 3463,
+      "plugin": "Autodafe-DrumKit",
+      "version": "1.0.0",
+      "model": "DrumsKick",
+      "params": [
+        {
+          "id": 0,
+          "value": 0.0
+        }
+      ],
+      "rightModuleId": 3466,
+      "data": {
+        "sampletype": 7
+      },
+      "pos": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": 3464,
+      "plugin": "Core",
+      "version": "1.1.6",
+      "model": "AudioInterface",
+      "params": [],
+      "leftModuleId": 3471,
+      "data": {
+        "audio": {
+          "driver": 7,
+          "deviceName": "Yamaha Steinberg USB ASIO",
+          "offset": 0,
+          "maxChannels": 8,
+          "sampleRate": 44100,
+          "blockSize": 512
+        }
+      },
+      "pos": [
+        59,
+        0
+      ]
+    },
+    {
+      "id": 3465,
+      "plugin": "Autodafe-DrumKit",
+      "version": "1.0.0",
+      "model": "DrumsKick",
+      "params": [
+        {
+          "id": 0,
+          "value": 0.0
+        }
+      ],
+      "leftModuleId": 3467,
+      "rightModuleId": 3468,
+      "data": {
+        "sampletype": 7
+      },
+      "pos": [
+        12,
+        1
+      ]
+    },
+    {
+      "id": 3466,
+      "plugin": "Autodafe-DrumKit",
+      "version": "1.0.0",
+      "model": "DrumsSnare",
+      "params": [
+        {
+          "id": 0,
+          "value": 0.0
+        }
+      ],
+      "leftModuleId": 3463,
+      "rightModuleId": 3467,
+      "data": {
+        "sampletype": 1
+      },
+      "pos": [
+        4,
+        1
+      ]
+    },
+    {
+      "id": 3467,
+      "plugin": "Autodafe-DrumKit",
+      "version": "1.0.0",
+      "model": "DrumsCymbals",
+      "params": [
+        {
+          "id": 0,
+          "value": 0.0
+        }
+      ],
+      "leftModuleId": 3466,
+      "rightModuleId": 3465,
+      "data": {
+        "sampletype": 5
+      },
+      "pos": [
+        8,
+        1
+      ]
+    },
+    {
+      "id": 3468,
+      "plugin": "Autodafe-DrumKit",
+      "version": "1.0.0",
+      "model": "DrumsSnare",
+      "params": [
+        {
+          "id": 0,
+          "value": 0.0
+        }
+      ],
+      "leftModuleId": 3465,
+      "rightModuleId": 3469,
+      "data": {
+        "sampletype": 5
+      },
+      "pos": [
+        16,
+        1
+      ]
+    },
+    {
+      "id": 3469,
+      "plugin": "Autodafe-DrumKit",
+      "version": "1.0.0",
+      "model": "DrumsCymbals",
+      "params": [
+        {
+          "id": 0,
+          "value": 0.0
+        }
+      ],
+      "leftModuleId": 3468,
+      "rightModuleId": 3470,
+      "data": {
+        "sampletype": 2
+      },
+      "pos": [
+        20,
+        1
+      ]
+    },
+    {
+      "id": 3470,
+      "plugin": "Autodafe-DrumKit",
+      "version": "1.0.0",
+      "model": "DrumsMixer",
+      "params": [
+        {
+          "id": 0,
+          "value": 1.0
+        },
+        {
+          "id": 1,
+          "value": 1.0
+        },
+        {
+          "id": 2,
+          "value": 0.0944999903
+        },
+        {
+          "id": 3,
+          "value": 0.985499918
+        },
+        {
+          "id": 4,
+          "value": 0.775000155
+        },
+        {
+          "id": 5,
+          "value": 0.123000011
+        },
+        {
+          "id": 6,
+          "value": 1.0
+        },
+        {
+          "id": 7,
+          "value": 0.0
+        },
+        {
+          "id": 8,
+          "value": 0.0
+        },
+        {
+          "id": 9,
+          "value": -1.0
+        },
+        {
+          "id": 10,
+          "value": 1.0
+        },
+        {
+          "id": 11,
+          "value": -0.543000042
+        },
+        {
+          "id": 12,
+          "value": 0.441000044
+        },
+        {
+          "id": 13,
+          "value": -0.357000023
+        },
+        {
+          "id": 14,
+          "value": 0.213000029
+        },
+        {
+          "id": 15,
+          "value": 0.0
+        },
+        {
+          "id": 16,
+          "value": 0.0
+        },
+        {
+          "id": 17,
+          "value": 0.0
+        },
+        {
+          "id": 18,
+          "value": 0.0
+        },
+        {
+          "id": 19,
+          "value": 0.0
+        },
+        {
+          "id": 20,
+          "value": 0.0
+        },
+        {
+          "id": 21,
+          "value": 0.0
+        },
+        {
+          "id": 22,
+          "value": 0.0
+        },
+        {
+          "id": 23,
+          "value": 0.0
+        },
+        {
+          "id": 24,
+          "value": 0.0
+        }
+      ],
+      "leftModuleId": 3469,
+      "data": {
+        "autodafeDrumMixerMutes": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "pos": [
+        24,
+        1
+      ]
+    },
+    {
+      "id": 3471,
+      "plugin": "CountModula",
+      "version": "1.13.0",
+      "model": "Mute",
+      "params": [
+        {
+          "id": 0,
+          "value": 1.0
+        },
+        {
+          "id": 1,
+          "value": 1.0
+        }
+      ],
+      "leftModuleId": 3452,
+      "rightModuleId": 3464,
+      "data": {
+        "moduleVersion": 1,
+        "Latch": true,
+        "theme": 0
+      },
+      "pos": [
+        51,
+        0
+      ]
+    }
+  ],
+  "cables": [
+    {
+      "id": 4,
+      "outputModuleId": 3454,
+      "outputId": 0,
+      "inputModuleId": 3452,
+      "inputId": 0,
+      "color": "#0c8e15"
+    },
+    {
+      "id": 8,
+      "outputModuleId": 3456,
+      "outputId": 0,
+      "inputModuleId": 3452,
+      "inputId": 1,
+      "color": "#c9b70e"
+    },
+    {
+      "id": 10,
+      "outputModuleId": 3457,
+      "outputId": 0,
+      "inputModuleId": 3452,
+      "inputId": 2,
+      "color": "#c91847"
+    },
+    {
+      "id": 13,
+      "outputModuleId": 3458,
+      "outputId": 0,
+      "inputModuleId": 3452,
+      "inputId": 3,
+      "color": "#0986ad"
+    },
+    {
+      "id": 14,
+      "outputModuleId": 3459,
+      "outputId": 0,
+      "inputModuleId": 3452,
+      "inputId": 4,
+      "color": "#8a2be2"
+    },
+    {
+      "id": 16,
+      "outputModuleId": 3460,
+      "outputId": 0,
+      "inputModuleId": 3452,
+      "inputId": 5,
+      "color": "#4bf2ed"
+    },
+    {
+      "id": 31,
+      "outputModuleId": 3452,
+      "outputId": 0,
+      "inputModuleId": 3463,
+      "inputId": 0,
+      "color": "#0c8e15"
+    },
+    {
+      "id": 33,
+      "outputModuleId": 3452,
+      "outputId": 1,
+      "inputModuleId": 3466,
+      "inputId": 0,
+      "color": "#c9b70e"
+    },
+    {
+      "id": 35,
+      "outputModuleId": 3452,
+      "outputId": 2,
+      "inputModuleId": 3467,
+      "inputId": 0,
+      "color": "#c91847"
+    },
+    {
+      "id": 37,
+      "outputModuleId": 3463,
+      "outputId": 0,
+      "inputModuleId": 3470,
+      "inputId": 1,
+      "color": "#0c8e15"
+    },
+    {
+      "id": 38,
+      "outputModuleId": 3466,
+      "outputId": 0,
+      "inputModuleId": 3470,
+      "inputId": 4,
+      "color": "#c9b70e"
+    },
+    {
+      "id": 39,
+      "outputModuleId": 3467,
+      "outputId": 0,
+      "inputModuleId": 3470,
+      "inputId": 7,
+      "color": "#c91847"
+    },
+    {
+      "id": 40,
+      "outputModuleId": 3452,
+      "outputId": 3,
+      "inputModuleId": 3465,
+      "inputId": 0,
+      "color": "#0986ad"
+    },
+    {
+      "id": 41,
+      "outputModuleId": 3465,
+      "outputId": 0,
+      "inputModuleId": 3470,
+      "inputId": 10,
+      "color": "#0986ad"
+    },
+    {
+      "id": 42,
+      "outputModuleId": 3452,
+      "outputId": 4,
+      "inputModuleId": 3468,
+      "inputId": 0,
+      "color": "#8a2be2"
+    },
+    {
+      "id": 43,
+      "outputModuleId": 3468,
+      "outputId": 0,
+      "inputModuleId": 3470,
+      "inputId": 13,
+      "color": "#8a2be2"
+    },
+    {
+      "id": 44,
+      "outputModuleId": 3452,
+      "outputId": 5,
+      "inputModuleId": 3469,
+      "inputId": 0,
+      "color": "#4bf2ed"
+    },
+    {
+      "id": 45,
+      "outputModuleId": 3469,
+      "outputId": 0,
+      "inputModuleId": 3470,
+      "inputId": 16,
+      "color": "#4bf2ed"
+    },
+    {
+      "id": 54,
+      "outputModuleId": 3470,
+      "outputId": 0,
+      "inputModuleId": 3471,
+      "inputId": 0,
+      "color": "#202020"
+    },
+    {
+      "id": 55,
+      "outputModuleId": 3470,
+      "outputId": 1,
+      "inputModuleId": 3471,
+      "inputId": 1,
+      "color": "#202020"
+    },
+    {
+      "id": 56,
+      "outputModuleId": 3471,
+      "outputId": 0,
+      "inputModuleId": 3464,
+      "inputId": 0,
+      "color": "#202020"
+    },
+    {
+      "id": 57,
+      "outputModuleId": 3471,
+      "outputId": 1,
+      "inputModuleId": 3464,
+      "inputId": 1,
+      "color": "#202020"
+    }
+  ]
+}
